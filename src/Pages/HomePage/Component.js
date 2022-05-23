@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Component = ({ component }) => {
-    const { _id, img, name, price, about } = component;
+    const { _id, img, name, price, about, company, available, minimum } = component;
     const navigate = useNavigate();
 
     const handleUpdate = id => {

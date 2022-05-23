@@ -5,7 +5,7 @@ const Components = () => {
     const [components, setComponents] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/tools')
+        fetch('https://young-crag-95618.herokuapp.com/tools')
             .then(res => res.json()).then(data => {
                 setComponents(data);
             })

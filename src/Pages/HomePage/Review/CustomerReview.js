@@ -18,7 +18,7 @@ const CustomerReview = () => {
         const reviews = { name: name, comment: comment, ratings: ratings };
         console.log(reviews)
 
-        fetch('http://localhost:4000/reviews', {
+        fetch('https://young-crag-95618.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
