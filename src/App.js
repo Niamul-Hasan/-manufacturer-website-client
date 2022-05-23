@@ -4,6 +4,7 @@ import DashBoard from "./Pages/DashBoard/DashBoard";
 import Home from "./Pages/HomePage/Home";
 import CustomerReview from "./Pages/HomePage/Review/CustomerReview";
 import Login from "./Pages/Login/Login";
+import Register from "./Pages/Login/Register";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/dash' element={<DashBoard />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Routes>
     </div>
   );
