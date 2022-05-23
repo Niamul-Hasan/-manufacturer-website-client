@@ -33,7 +33,7 @@ const HomeUpdate = () => {
             <form onSubmit={handleUpdate} className="flex bg-green-500 w-1/2 mx-auto" style={{ flexDirection: 'column', rowGap: '10px' }}>
                 <input type="text" placeholder="Type name" name="name" class="input input-bordered w-full max-w-xs" />
                 <input name="unit" type="number" placeholder="Type unit price" class="input input-bordered w-full max-w-xs" />
-                <input name="url" type="text" placeholder="Type url" class="input input-bordered w-full max-w-xs" />
+                <input name="url" type="text" placeholder="Type url" class="input input-bordered w-full max-w-xs" required />
                 <input name="company" type="text" placeholder="Type company" class="input input-bordered w-full max-w-xs" />
                 <input name="about" type="text" placeholder="Type about" class="input input-bordered w-full max-w-xs" />
                 <input name="available" type="number" placeholder="Type available " class="input input-bordered w-full max-w-xs" />
