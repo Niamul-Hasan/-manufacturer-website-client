@@ -13,8 +13,8 @@ const HomeReview = () => {
     }, [reviews])
     return (
         <>
-            <h2 className='text-3xl text-teal-700 font-bold text-center my-2'>Read Recent Reviews</h2>
-            <div className='grid sm:grid-clos-1 lg:grid-cols-3 lg:w-4/5 mx-auto gap-3 '>
+            <h2 className='text-3xl text-teal-500 font-bold text-center my-2'>Read Recent Reviews</h2>
+            <div className='grid sm:grid-clos-1 lg:grid-cols-3 lg:w-4/5 mx-auto gap-3 mb-5'>
                 {
                     reviews.map(review => <RecentReview
                         key={review._id}

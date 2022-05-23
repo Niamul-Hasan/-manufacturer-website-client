@@ -33,6 +33,7 @@ const CustomerReview = () => {
 
         <div className=''>
             <NavBar></NavBar>
+            <h1 className='text-center text-purple-500 uppercase font-bold mt-3'>Place Your Review Here</h1>
             <div className="form-control w-full max-w-xs mx-auto">
                 <label className="label">
                     <span className="label-text">Customer name?</span>

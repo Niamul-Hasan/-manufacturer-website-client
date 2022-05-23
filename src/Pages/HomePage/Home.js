@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../SharedPages/Footer';
 import NavBar from '../SharedPages/NavBar';
 import CartInfo from './BusinessSummery/CartInfo';
 import CaroselBanner from './CaroselBanner';
@@ -13,6 +14,7 @@ const Home = () => {
             <Components></Components>
             <CartInfo></CartInfo>
             <HomeReview></HomeReview>
+            <Footer></Footer>
 
 
         </div>
