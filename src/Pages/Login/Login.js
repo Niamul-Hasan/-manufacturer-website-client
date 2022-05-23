@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../SharedPages/Loading';
 import useToken from '../Hooks/UseToken';
+import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
 
@@ -106,7 +107,7 @@ const Login = () => {
                     <p><small>New to Doctors Portal? <Link className='text-secondary' to="/register">Create New Account</Link></small></p>
 
                     <div class="divider">OR</div>
-                    {/* <GoogleLogin></GoogleLogin> */}
+                    <GoogleLogin></GoogleLogin>
 
                 </div>
             </div>

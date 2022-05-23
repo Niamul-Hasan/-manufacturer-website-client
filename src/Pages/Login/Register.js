@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../Hooks/UseToken';
 import Loading from '../SharedPages/Loading';
+import GoogleLogin from './GoogleLogin';
 
 
 const Register = () => {
@@ -132,7 +133,7 @@ const Register = () => {
                     </form>
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
-                    {/* <GoogleLogin></GoogleLogin> */}
+                    <GoogleLogin></GoogleLogin>
                 </div>
             </div>
         </div >
