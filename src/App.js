@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadMyOrder from "./Pages/DashBoard/LoadMyOrder";
 import ManageOrders from "./Pages/DashBoard/ManageOrders";
+import Users from "./Pages/DashBoard/Users";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/dash/review' element={<CustomerReview></CustomerReview>}></Route>
           <Route path='/dash/profile' element={<CustomerReview></CustomerReview>}></Route>
           <Route path='/dash/manage' element={<ManageOrders></ManageOrders>}></Route>
+          <Route path='/dash/user' element={<Users></Users>}></Route>
         </Route>
 
 
