@@ -25,6 +25,9 @@ const Component = ({ component }) => {
 
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary btn-sm transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-teal-600 hover:text-white duration-300"
+                            onClick={() => {
+                                navigate(`/myorder/${_id}`);
+                            }}
                         >Get This</button>
 
                         {/* for update  */}
