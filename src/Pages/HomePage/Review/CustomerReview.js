@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import NavBar from '../../SharedPages/NavBar';
 
 const CustomerReview = () => {
 
@@ -32,11 +31,10 @@ const CustomerReview = () => {
     return (
 
         <div className=''>
-            <NavBar></NavBar>
             <h1 className='text-center text-purple-500 uppercase font-bold mt-3'>Place Your Review Here</h1>
             <div className="form-control w-full max-w-xs mx-auto">
                 <label className="label">
-                    <span className="label-text">Customer name?</span>
+                    <span className="label-text">Customer name</span>
                 </label>
                 <input type="text" placeholder="Type name" ref={nameRef} className="input input-bordered w-full max-w-xs" />
             </div>

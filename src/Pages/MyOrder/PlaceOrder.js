@@ -3,9 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaMinusCircle } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const PlaceOrder = ({ tools }) => {
-    const { _id, name, available, minimum, price, about } = tools;
+    const { _id, name, available, minimum, price, img, about } = tools;
     const init = parseInt(minimum);
     const [count, setCount] = useState(init);
 
@@ -17,9 +18,11 @@ const PlaceOrder = ({ tools }) => {
         const quantity = quantityRef.current.value;
         const myOrder = {
             productId: orderId,
+            img: img,
             product: name,
             customer: user?.displayName,
             email: user?.email,
+            unitPrice: price,
             quantity: quantity,
             duePrice: unitPrice * quantity
         }
@@ -30,7 +33,10 @@ const PlaceOrder = ({ tools }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(myOrder)
-        }).then(res => res.json()).then(data => console.log(data));
+        }).then(res => res.json()).then(data => {
+            console.log(data)
+        });
+        toast.success('Your Order is placed')
     }
 
 
@@ -41,7 +47,7 @@ const PlaceOrder = ({ tools }) => {
             >{_id}</span></h2>
             <div class="hero min-h-screen bg-base-200 w-3/4 mx-auto">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img src={tools.img} class="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <img src={img} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>
                         <h1 class="text-5xl font-bold">{name}</h1>
                         <p class="pt-6">{about}</p>
