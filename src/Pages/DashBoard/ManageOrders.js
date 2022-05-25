@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../SharedPages/Loading';
 
 const ManageOrders = () => {
+
+    const [status, setStatus] = useState(false);
+    const handleStatus = id => {
+        setStatus(true);
+    }
+
     const { data: allOrders, isLoading } = useQuery('orders', () => fetch('http://localhost:4000/orders')
         .then(res => res.json()));
 
@@ -46,13 +52,15 @@ const ManageOrders = () => {
                                 <td>${order.duePrice}</td>
                                 <td>
                                     {(order.duePrice && !order.paid) && <p><span className='text-red-500'> Not Paid</span></p>}
-                                    {(order.price && order.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                    {(order.duePrice && order.paid) && <div>
+                                        <p><span className={`font-bold + ${status ? "text-success" : "text-warning"}`}>{status ? ' Paid' : 'Pending'}</span></p>
+
+
                                     </div>}
                                 </td>
                                 <td>
-                                    <button className='btn btn-xs bg-red-500 border-0 text-black'>Cancel</button>
+                                    {order.paid ? <button disabled={status} onClick={() => handleStatus(index)} className='btn btn-xs btn-secondary'>Change status</button>
+                                        : <button className='btn btn-xs bg-red-500 border-0 text-black'>Cancel</button>}
                                 </td>
                             </tr>)
                         }

@@ -18,7 +18,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [token] = useToken(user)
+    const [token] = useToken(user);
 
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -33,6 +33,7 @@ const Login = () => {
         if (token) {
             navigate(from, { replace: true });
         }
+
     }, [from, navigate, token])
 
     if (loading) {
@@ -104,7 +105,7 @@ const Login = () => {
                         {signinError}
                         <input type="submit" value="Login" className='btn w-full max-w-xs' />
                     </form>
-                    <p><small>New to Doctors Portal? <Link className='text-secondary' to="/register">Create New Account</Link></small></p>
+                    <p><small>New to PC HUNK? <Link className='text-secondary' to="/register">Create New Account</Link></small></p>
 
                     <div class="divider">OR</div>
                     <GoogleLogin></GoogleLogin>

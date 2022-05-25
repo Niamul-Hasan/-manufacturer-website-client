@@ -5,6 +5,7 @@ const Component = ({ component }) => {
     const { _id, img, name, price, about, company, available, minimum, ratings } = component;
     const navigate = useNavigate();
 
+
     const handleUpdate = id => {
         navigate(`/update/${id}`)
     }

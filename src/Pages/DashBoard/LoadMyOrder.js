@@ -68,14 +68,15 @@ const LoadMyOrder = () => {
                                 <td>${order.duePrice}</td>
                                 <td>
                                     {(order.unitPrice && !order.paid) && <Link to={`/dash/payment/${order._id}`}><button class="btn btn-xs btn-success">Pay</button></Link>}
-                                    {(order.price && order.paid) && <div>
+                                    {(order.unitPrice && order.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                        <p>Transaction id: <br />
+                                            <small className='text-success'>{order.transactionId}</small></p>
                                     </div>}
                                 </td>
-                                <td>
+                                {!order?.paid && <td>
                                     <button className='btn btn-xs bg-red-500 border-0 text-black'>Cancel < MdOutlineCancel /></button>
-                                </td>
+                                </td>}
                             </tr>)
                         }
 

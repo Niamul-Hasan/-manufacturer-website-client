@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { BsFileMinus } from 'react-icons/bs'
-import { BsFilePlus } from 'react-icons/bs'
 
 const HomeUpdate = () => {
     const { id } = useParams();
-    const [count, setCount] = useState(1);
-    const handlePlus = () => {
-        if (count < 10) {
-            setCount(count + 1);
-        }
-        return
-    }
+
 
     const handleUpdate = event => {
         event.preventDefault();
@@ -50,18 +42,7 @@ const HomeUpdate = () => {
                 <input name="ratings" type="number" placeholder="Type ratings" class="input input-bordered w-full max-w-xs" />
                 <input name="" type="submit" value="Update" class="input input-bordered w-full max-w-xs" />
             </form>
-            <button
-                onClick={() => {
-                    if (count > 0) {
-                        setCount(count - 1)
-                    }
-                    return
-                }}
-                class="btn btn-xs text-xl"><BsFileMinus /></button>
-            <input type="number" value={count} id="" className='text-center' />
-            <button
-                onClick={handlePlus}
-                class="btn btn-xs text-xl"><BsFilePlus /></button>
+
         </div>
     );
 };

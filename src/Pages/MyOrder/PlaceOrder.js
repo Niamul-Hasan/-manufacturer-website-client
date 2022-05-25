@@ -61,7 +61,7 @@ const PlaceOrder = ({ tools }) => {
             <h2 className='text-4xl text-teal-500 text-center'>Your Product ID : <span
                 className='text-purple-500'
             >{_id}</span></h2>
-            <div class="hero min-h-screen bg-base-200 w-3/4 mx-auto">
+            <div class="hero min-h-screen bg-base-200 w-full mx-auto">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img src={img} class="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div className='grid lg:grid-cols-2 sm:grid-flow-cols-1'>
