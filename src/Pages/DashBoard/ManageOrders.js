@@ -43,7 +43,7 @@ const ManageOrders = () => {
                                     </div>
                                 </td>
                                 <td>{order.email}</td>
-                                <td>{order.duePrice}</td>
+                                <td>${order.duePrice}</td>
                                 <td>
                                     {(order.duePrice && !order.paid) && <p><span className='text-red-500'> Not Paid</span></p>}
                                     {(order.price && order.paid) && <div>

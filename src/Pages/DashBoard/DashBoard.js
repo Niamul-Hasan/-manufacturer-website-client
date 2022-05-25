@@ -24,12 +24,17 @@ const DashBoard = () => {
                     <label for="dashBoard" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link to='/dash'>MyOrder </Link></li>
-                        <li><Link to='review'>Add Reviews</Link></li>
                         <li><Link to='profile'>My Profile</Link></li>
 
-                        <li><Link to='manage'>Manage Orders</Link></li>
-                        <li><Link to='user'>All Users</Link></li>
+                        {!admin && <div>
+                            <li><Link to='/dash'>MyOrder </Link></li>
+                            <li><Link to='review'>Add Reviews</Link></li>
+                        </div>}
+
+                        {admin && <div>
+                            <li><Link to='manage'>Manage Orders</Link></li>
+                            <li><Link to='user'>All Users</Link></li>
+                        </div>}
 
                     </ul>
 
