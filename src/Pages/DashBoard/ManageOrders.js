@@ -53,7 +53,7 @@ const ManageOrders = () => {
                                 <td>
                                     {(order.duePrice && !order.paid) && <p><span className='text-red-500'> Not Paid</span></p>}
                                     {(order.duePrice && order.paid) && <div>
-                                        <p><span className={`font-bold + ${status ? "text-success" : "text-warning"}`}>{status ? ' Paid' : 'Pending'}</span></p>
+                                        <p><span className={`font-bold + ${status ? "text-success" : "text-warning"}`}>{status ? 'Shiped' : 'Pending'}</span></p>
 
 
                                     </div>}

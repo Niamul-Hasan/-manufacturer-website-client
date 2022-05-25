@@ -15,6 +15,10 @@ import ManageOrders from "./Pages/DashBoard/ManageOrders";
 import Users from "./Pages/DashBoard/Users";
 import Payment from "./Pages/DashBoard/Payment";
 import NotFound from "./Pages/Not Found/NotFound";
+import ManageProducts from "./Pages/DashBoard/ManageProducts";
+import AddProduct from "./Pages/DashBoard/AddProduct";
+import MyProfile from "./Pages/DashBoard/MyProfile";
+import UpdateProfile from "./Pages/DashBoard/UpdateProfile";
 
 
 function App() {
@@ -27,12 +31,15 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
 
         <Route path='/dash' element={<PrivateLogin><DashBoard /></PrivateLogin>}>
-          <Route index element={<LoadMyOrder />}></Route>
+          <Route index element={<MyProfile />}></Route>
+          <Route path='/dash/updateProfile/:email' element={<UpdateProfile />}></Route>
           <Route path='/dash/review' element={<CustomerReview></CustomerReview>}></Route>
-          <Route path='/dash/profile' element={<CustomerReview></CustomerReview>}></Route>
+          <Route path='/dash/myorder' element={<LoadMyOrder />}></Route>
           <Route path='/dash/payment/:orderId' element={<Payment />}></Route>
           <Route path='/dash/manage' element={<ManageOrders></ManageOrders>}></Route>
           <Route path='/dash/user' element={<Users></Users>}></Route>
+          <Route path='/dash/manageProduct' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='/dash/addProduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
 
 
