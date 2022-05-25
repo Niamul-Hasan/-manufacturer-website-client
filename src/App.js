@@ -14,6 +14,7 @@ import LoadMyOrder from "./Pages/DashBoard/LoadMyOrder";
 import ManageOrders from "./Pages/DashBoard/ManageOrders";
 import Users from "./Pages/DashBoard/Users";
 import Payment from "./Pages/DashBoard/Payment";
+import NotFound from "./Pages/Not Found/NotFound";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/myorder/:id' element={<PrivateLogin><MyOrder /></PrivateLogin>}></Route>
 
         <Route path="/update/:id" element={<HomeUpdate />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
 
