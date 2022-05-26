@@ -10,7 +10,7 @@ const ManageOrders = () => {
         setStatus(true);
     }
 
-    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:4000/orders')
+    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('https://young-crag-95618.herokuapp.com/orders')
         .then(res => res.json()));
 
     if (isLoading) {
@@ -18,7 +18,7 @@ const ManageOrders = () => {
     }
 
     const handleDelete = id => {
-        fetch(`http://localhost:4000/orders/${id}`, {
+        fetch(`https://young-crag-95618.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         }).then(res => res.json()).then(data => {
             if (data.deletedCount) {

@@ -12,7 +12,7 @@ const LoadMyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:4000/myorder?email=${user.email}`, {
+            fetch(`https://young-crag-95618.herokuapp.com/myorder?email=${user.email}`, {
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }

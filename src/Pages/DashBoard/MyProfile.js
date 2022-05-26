@@ -24,7 +24,7 @@ const MyProfile = () => {
 
         }
         console.log(profile);
-        fetch(`http://localhost:4000/profile`, {
+        fetch(`https://young-crag-95618.herokuapp.com/profile`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

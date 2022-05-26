@@ -4,7 +4,7 @@ import Loading from '../SharedPages/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:4000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://young-crag-95618.herokuapp.com/user', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`

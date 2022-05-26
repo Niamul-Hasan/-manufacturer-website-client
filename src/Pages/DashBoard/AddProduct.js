@@ -16,7 +16,7 @@ const AddProduct = () => {
         const ratings = event.target.ratings.value;
         const addProduct = { name, price: unit, img: url, company, about, available, minimum, ratings }
         console.log(addProduct)
-        fetch(`http://localhost:4000/tools`, {
+        fetch(`https://young-crag-95618.herokuapp.com/tools`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

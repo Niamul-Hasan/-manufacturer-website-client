@@ -7,7 +7,7 @@ const UpdateProfile = () => {
     const [myprofile, setMyprofile] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:4000/profile/${email}`)
+        fetch(`https://young-crag-95618.herokuapp.com/profile/${email}`)
             .then(res => res.json()).then(data => {
                 setMyprofile(data);
             })
@@ -27,7 +27,7 @@ const UpdateProfile = () => {
 
         }
         console.log(profile);
-        fetch(`http://localhost:4000/profile/${email}`, {
+        fetch(`https://young-crag-95618.herokuapp.com/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

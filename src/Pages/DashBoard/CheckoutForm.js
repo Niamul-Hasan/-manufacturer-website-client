@@ -15,7 +15,7 @@ const CheckoutForm = ({ myorder }) => {
     const [processing, setProcessing] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://young-crag-95618.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -76,7 +76,7 @@ const CheckoutForm = ({ myorder }) => {
             setPayment('Congrates! Your payment is completed.');
             setTransactionId(paymentIntent.id);
 
-            const url = `http://localhost:4000/myorder/${_id}`;
+            const url = `https://young-crag-95618.herokuapp.com/myorder/${_id}`;
             const paymentInfo = {
                 payment_ID: _id,
                 transactionId: paymentIntent.id,

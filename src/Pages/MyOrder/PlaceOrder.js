@@ -39,7 +39,7 @@ const PlaceOrder = ({ tools }) => {
         console.log(myOrder.phone);
 
         if (phone) {
-            fetch('http://localhost:4000/orders', {
+            fetch('https://young-crag-95618.herokuapp.com/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
