@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-import img from '../../../Asset/404-error.png'
+import img from '../../../Asset/game.png';
 
 const Gaming = () => {
     return (
