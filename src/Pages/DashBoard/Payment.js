@@ -25,20 +25,22 @@ const Payment = () => {
     return (
         <div>
             <h2 className='text-2xl text-cyan-800 mb-4'>Please Make Payment for: <span
-                className='text-3xl text-red-500'
-            >{orderId}</span></h2>
-            <div class="card w-96 bg-base-300 shadow-xl">
+                className='text-2xl text-purple-500'
+            >{myorder.product}</span></h2>
+            <div class="card w-1/2 mx-auto bg-base-300 shadow-xl">
                 <div class="card-body">
                     <p className='text-teal-600 font-bold'>Hello, {myorder.customer}</p>
-                    <h2 class="card-title">Please Pay For: <span className='text-orange-600'
-                    >{myorder.product}</span></h2>
+                    <h2 class="card-title">Your Order ID: <span className='text-orange-600'
+                    >{orderId}</span></h2>
+                    <p className='text-2xl'>Order Quantity: {myorder.quantity}</p>
 
-                    <p>Due Payment is : <span
+                    <p><span className='text-xl'>Due Payment is</span> : <span
                         className='text-2xl text-green-800'
                     >${myorder.duePrice}</span></p>
+                    <p>Customer Email: {myorder.email}</p>
                 </div>
             </div>
-            <div class="card w-96 bg-base-200 shadow-xl my-12">
+            <div class="card w-1/2 mx-auto bg-base-200 shadow-xl my-12">
                 <div class="card-body">
                     <h2 class="card-title">Payment Method : card</h2>
                     <Elements stripe={stripePromise}>
