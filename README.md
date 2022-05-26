@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Project name *PC Hunk*
+## Client repo link 
+<https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Niamul-Hasan>
+## Server repo link
+<https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Niamul-Hasan>
+## Live Site link
+<https://pc-hunk.web.app/>
+### Admin User Email (admin@simple.com) & pass(123456)
+
+## Heroku link
+<https://young-crag-95618.herokuapp.com/>
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +79,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
