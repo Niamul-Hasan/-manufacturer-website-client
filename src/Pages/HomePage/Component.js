@@ -6,9 +6,7 @@ const Component = ({ component }) => {
     const navigate = useNavigate();
 
 
-    const handleUpdate = id => {
-        navigate(`/update/${id}`)
-    }
+
     return (
         <div>
             <div class="card lg:card-side bg-base-100 shadow-xl">
@@ -29,12 +27,9 @@ const Component = ({ component }) => {
                             onClick={() => {
                                 navigate(`/myorder/${_id}`);
                             }}
-                        >Get This</button>
+                        >Select This</button>
 
-                        {/* for update  */}
-                        <button class="btn btn-primary btn-sm transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-teal-600 hover:text-white duration-300"
-                            onClick={() => handleUpdate(_id)}
-                        >Update This</button>
+
                     </div>
                 </div>
             </div>
