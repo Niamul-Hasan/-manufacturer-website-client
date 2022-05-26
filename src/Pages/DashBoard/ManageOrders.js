@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import Loading from '../SharedPages/Loading';
 
 const ManageOrders = () => {
@@ -9,12 +10,25 @@ const ManageOrders = () => {
         setStatus(true);
     }
 
-    const { data: allOrders, isLoading } = useQuery('orders', () => fetch('http://localhost:4000/orders')
+    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:4000/orders')
         .then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
     }
+
+    const handleDelete = id => {
+        fetch(`http://localhost:4000/orders/${id}`, {
+            method: 'DELETE'
+        }).then(res => res.json()).then(data => {
+            if (data.deletedCount) {
+                toast.success('Order is Deleted');
+                refetch();
+            }
+        })
+
+    }
+
     return (
         <div>
             <h2 className="text-2xl text-center">Orders Length:{allOrders.length}</h2>
@@ -60,7 +74,9 @@ const ManageOrders = () => {
                                 </td>
                                 <td>
                                     {order.paid ? <button disabled={status} onClick={() => handleStatus(index)} className='btn btn-xs btn-secondary'>Change status</button>
-                                        : <button className='btn btn-xs bg-red-500 border-0 text-black'>Cancel</button>}
+                                        : <button
+                                            onClick={() => handleDelete(order._id)}
+                                            className='btn btn-xs bg-red-500 border-0 text-black'>Cancel</button>}
                                 </td>
                             </tr>)
                         }

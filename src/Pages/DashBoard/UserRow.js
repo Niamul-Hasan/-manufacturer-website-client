@@ -22,7 +22,23 @@ const UserRow = ({ user, index, refetch }) => {
                     toast.success('Successfully maked Admin');
                 }
             })
+    };
+
+    const handleDelete = () => {
+        fetch(`http://localhost:4000/user/${email}`, {
+            method: 'DELETE',
+            headers: {
+                "authorization": `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res => res.json)
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success('User is deleted');
+                    refetch();
+                }
+            })
     }
+
     return (
         <tr>
             <th>{index + 1}</th>
@@ -34,7 +50,9 @@ const UserRow = ({ user, index, refetch }) => {
                     role === 'Admin' && <p className='text-success font-bold'>ADMIN</p>
                 }
             </td>
-            <td><button class="btn btn-xs border-0 bg-red-500 text-black">remove user</button></td>
+            <td><button
+                onClick={handleDelete}
+                class="btn btn-xs border-0 bg-red-500 text-black">remove user</button></td>
         </tr>
     );
 };
