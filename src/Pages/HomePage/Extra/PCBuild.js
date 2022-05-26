@@ -1,4 +1,9 @@
 import React from 'react';
+import img1 from '../../../Asset/cart-1.png';
+import img2 from '../../../Asset/cart-2.png';
+import img3 from '../../../Asset/cart-3.png';
+import img4 from '../../../Asset/cart-4.png';
+
 
 const PCBuild = () => {
     return (
@@ -36,25 +41,16 @@ const PCBuild = () => {
 
                     <div class="h-96 carousel carousel-vertical rounded-box">
                         <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=8B7BCDC2" alt="" />
+                            <img src={img1} alt="" />
                         </div>
                         <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=500B67FB" alt="" />
+                            <img src={img2} alt="" />
                         </div>
                         <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=A89D0DE6" alt="" />
+                            <img src={img3} alt="" />
                         </div>
                         <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=225E6693" alt="" />
-                        </div>
-                        <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=9D9539E7" alt="" />
-                        </div>
-                        <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=BDC01094" alt="" />
-                        </div>
-                        <div class="carousel-item h-full">
-                            <img src="https://api.lorem.space/image/game?w=256&h=400&hash=7F5AE56A" alt="" />
+                            <img src={img4} alt="" />
                         </div>
                     </div>
 
