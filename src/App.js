@@ -19,6 +19,7 @@ import ManageProducts from "./Pages/DashBoard/ManageProducts";
 import AddProduct from "./Pages/DashBoard/AddProduct";
 import MyProfile from "./Pages/DashBoard/MyProfile";
 import UpdateProfile from "./Pages/DashBoard/UpdateProfile";
+import UpdateProduct from "./Pages/DashBoard/UpdateProduct";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path='/dash/manage' element={<ManageOrders></ManageOrders>}></Route>
           <Route path='/dash/user' element={<Users></Users>}></Route>
           <Route path='/dash/manageProduct' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='/dash/updateProduct/:productId' element={<UpdateProduct />}></Route>
           <Route path='/dash/addProduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
 
