@@ -13,7 +13,7 @@
 # Some key Features of My Project
 - Admin base authentication is implemented
 - Admin base authorization is implemented
-- Stripe paypent Gateway is used to pay via test card
+- Stripe payment Gateway is used to pay via test card
 - DeisyUI is used 
 - Heroku is used to deploy back end server
 - React firebase hooks are used for authentication system
