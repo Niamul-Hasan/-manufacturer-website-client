@@ -10,6 +10,15 @@
 ## Heroku link
 <https://young-crag-95618.herokuapp.com/>
 
+# Some key Features of My Project
+- Admin base authentication is implemented
+- Admin base authorization is implemented
+- Stripe paypent Gateway is used to pay via test card
+- DeisyUI is used 
+- Heroku is used to deploy back end server
+- React firebase hooks are used for authentication system
+- Firebase is used to host the client 
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
