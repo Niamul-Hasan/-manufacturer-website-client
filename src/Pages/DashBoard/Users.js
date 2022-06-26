@@ -1,9 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../SharedPages/Loading';
+import DeleteUser from './DeleteUser';
 import UserRow from './UserRow';
 
 const Users = () => {
+
+    const [confirmDelete, setConfirmDelete] = useState(null);
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://young-crag-95618.herokuapp.com/user', {
         method: 'GET',
         headers: {
@@ -35,11 +39,17 @@ const Users = () => {
                                 user={user}
                                 index={index}
                                 refetch={refetch}
+                                setConfirmDelete={setConfirmDelete}
                             ></UserRow>)
                         }
                     </tbody>
                 </table>
             </div>
+            {confirmDelete && <DeleteUser
+                confirmDelete={confirmDelete}
+                setConfirmDelete={setConfirmDelete}
+                refetch={refetch}
+            ></DeleteUser>}
         </div>
     );
 };

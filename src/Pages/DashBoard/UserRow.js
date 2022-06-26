@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, index, refetch }) => {
+const UserRow = ({ user, index, refetch, setConfirmDelete }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
@@ -24,20 +24,6 @@ const UserRow = ({ user, index, refetch }) => {
             })
     };
 
-    const handleDelete = () => {
-        fetch(`https://young-crag-95618.herokuapp.com/user/${email}`, {
-            method: 'DELETE',
-            headers: {
-                "authorization": `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        }).then(res => res.json)
-            .then(data => {
-                if (data.deletedCount) {
-                    toast.success('User is deleted');
-                    refetch();
-                }
-            })
-    }
 
     return (
         <tr>
@@ -50,9 +36,9 @@ const UserRow = ({ user, index, refetch }) => {
                     role === 'Admin' && <p className='text-success font-bold'>ADMIN</p>
                 }
             </td>
-            <td><button
-                onClick={handleDelete}
-                class="btn btn-xs border-0 bg-red-500 text-black">remove user</button></td>
+            <td>
+                <label onClick={() => setConfirmDelete(user)} for="delete-user" class="btn btn-xs btn-error">Remove User</label>
+            </td>
         </tr>
     );
 };
