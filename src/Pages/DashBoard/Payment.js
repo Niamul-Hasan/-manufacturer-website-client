@@ -27,7 +27,7 @@ const Payment = () => {
             <h2 className='text-2xl text-cyan-800 mb-4'>Please Make Payment for: <span
                 className='text-2xl text-purple-500'
             >{myorder.product}</span></h2>
-            <div class="card w-1/2 mx-auto bg-base-300 shadow-xl">
+            <div class="card lg:w-1/2 sm:w-4/5 mx-auto bg-base-300 shadow-xl">
                 <div class="card-body">
                     <p className='text-teal-600 font-bold'>Hello, {myorder.customer}</p>
                     <h2 class="card-title">Your Order ID: <span className='text-orange-600'
@@ -40,7 +40,7 @@ const Payment = () => {
                     <p>Customer Email: {myorder.email}</p>
                 </div>
             </div>
-            <div class="card w-1/2 mx-auto bg-base-200 shadow-xl my-12">
+            <div class="card lg:w-1/2 sm:w-4/5 mx-auto bg-base-200 shadow-xl my-12">
                 <div class="card-body">
                     <h2 class="card-title">Payment Method : card</h2>
                     <Elements stripe={stripePromise}>

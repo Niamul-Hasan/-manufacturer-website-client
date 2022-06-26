@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { MdOutlineCancel } from 'react-icons/md';
 
 const LoadMyOrder = () => {
     const [myorders, setMyorders] = useState([]);
@@ -75,7 +74,7 @@ const LoadMyOrder = () => {
                                     </div>}
                                 </td>
                                 {!order?.paid && <td>
-                                    <button className='btn btn-xs bg-red-500 border-0 text-black'>Cancel < MdOutlineCancel /></button>
+                                    <button className='btn btn-xs bg-red-500 border-0 text-black'>Delete</button>
                                 </td>}
                             </tr>)
                         }

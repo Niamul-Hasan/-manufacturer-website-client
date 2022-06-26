@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
 import Loading from '../SharedPages/Loading';
+import DeleteManageOrders from './DeleteManageOrders';
 
 const ManageOrders = () => {
+
+    const [deleteOrder, setDeleteOrder] = useState(null);
 
     const [status, setStatus] = useState(false);
     const handleStatus = id => {
         setStatus(true);
     }
 
-    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('https://young-crag-95618.herokuapp.com/orders')
-        .then(res => res.json()));
+    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('https://young-crag-95618.herokuapp.com/orders', {
+        method: 'GET',
+        headers: {
+            "authorization": `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
     }
 
-    const handleDelete = id => {
-        fetch(`https://young-crag-95618.herokuapp.com/orders/${id}`, {
-            method: 'DELETE'
-        }).then(res => res.json()).then(data => {
-            if (data.deletedCount) {
-                toast.success('Order is Deleted');
-                refetch();
-            }
-        })
 
-    }
 
     return (
         <div>
@@ -74,9 +70,8 @@ const ManageOrders = () => {
                                 </td>
                                 <td>
                                     {order.paid ? <button disabled={status} onClick={() => handleStatus(index)} className='btn btn-xs btn-secondary'>Change status</button>
-                                        : <button
-                                            onClick={() => handleDelete(order._id)}
-                                            className='btn btn-xs bg-red-500 border-0 text-black'>Cancel</button>}
+                                        : <label onClick={() => setDeleteOrder(order)} for="delete-manage" class="btn btn-xs btn-error">Cancel</label>
+                                    }
                                 </td>
                             </tr>)
                         }
@@ -84,6 +79,11 @@ const ManageOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {deleteOrder && <DeleteManageOrders
+                refetch={refetch}
+                deleteOrder={deleteOrder}
+                setDeleteOrder={setDeleteOrder}
+            ></DeleteManageOrders>}
         </div>
     );
 };
