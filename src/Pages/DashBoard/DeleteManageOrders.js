@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteManageOrders = ({ refetch, deleteOrder, setDeleteOrder }) => {
     const { _id, product } = deleteOrder;
     const handleDelete = () => {
-        fetch(`https://young-crag-95618.herokuapp.com/order/${_id}`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/order/${_id}`, {
             method: 'DELETE'
         }).then(res => res.json()).then(data => {
             if (data.deletedCount) {

@@ -39,7 +39,7 @@ const PlaceOrder = ({ tools }) => {
         console.log(myOrder.phone);
 
         if (phone) {
-            fetch('https://young-crag-95618.herokuapp.com/orders', {
+            fetch('https://manufacturer-website-server-vercel01.vercel.app/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

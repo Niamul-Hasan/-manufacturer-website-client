@@ -17,7 +17,7 @@ const CustomerReview = () => {
         const reviews = { name: name, comment: comment, ratings: ratings };
         console.log(reviews)
 
-        fetch('https://young-crag-95618.herokuapp.com/reviews', {
+        fetch('https://manufacturer-website-server-vercel01.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

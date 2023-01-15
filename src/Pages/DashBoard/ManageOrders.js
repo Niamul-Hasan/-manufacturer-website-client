@@ -12,7 +12,7 @@ const ManageOrders = () => {
         setStatus(true);
     }
 
-    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('https://young-crag-95618.herokuapp.com/orders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('orders', () => fetch('https://manufacturer-website-server-vercel01.vercel.app/orders', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`

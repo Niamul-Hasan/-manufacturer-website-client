@@ -7,7 +7,7 @@ const UpdateProfile = () => {
     const [myprofile, setMyprofile] = useState({});
 
     useEffect(() => {
-        fetch(`https://young-crag-95618.herokuapp.com/profile/${email}`)
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/profile/${email}`)
             .then(res => res.json()).then(data => {
                 setMyprofile(data);
             })
@@ -27,7 +27,7 @@ const UpdateProfile = () => {
 
         }
         console.log(profile);
-        fetch(`https://young-crag-95618.herokuapp.com/profile/${email}`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

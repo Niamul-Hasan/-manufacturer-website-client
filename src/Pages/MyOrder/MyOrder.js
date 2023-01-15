@@ -9,7 +9,7 @@ import PlaceOrder from './PlaceOrder';
 const MyOrder = () => {
     const { id } = useParams();
     //using react-query
-    const { data: tools, isLoading } = useQuery(['tools', id], () => fetch(`https://young-crag-95618.herokuapp.com/tools/${id}`, {
+    const { data: tools, isLoading } = useQuery(['tools', id], () => fetch(`https://manufacturer-website-server-vercel01.vercel.app/tools/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

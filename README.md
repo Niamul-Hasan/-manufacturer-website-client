@@ -8,7 +8,7 @@
 ### Admin User Email (admin@simple.com) & pass(123456)
 
 ## Heroku link
-<https://young-crag-95618.herokuapp.com/>
+<https://manufacturer-website-server-vercel01.vercel.app/>
 
 # Some key Features of My Project
 - Admin base authentication is implemented

@@ -5,7 +5,7 @@ const UserRow = ({ user, index, refetch, setConfirmDelete }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://young-crag-95618.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`

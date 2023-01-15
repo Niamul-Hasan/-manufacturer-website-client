@@ -11,7 +11,7 @@ const LoadMyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://young-crag-95618.herokuapp.com/myorder?email=${user.email}`, {
+            fetch(`https://manufacturer-website-server-vercel01.vercel.app/myorder?email=${user.email}`, {
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }

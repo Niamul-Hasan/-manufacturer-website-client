@@ -6,7 +6,7 @@ const DeleteUser = ({ setConfirmDelete, confirmDelete, refetch }) => {
     const { email } = confirmDelete;
 
     const handleDelete = () => {
-        fetch(`https://young-crag-95618.herokuapp.com/user/${email}`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/user/${email}`, {
             method: 'DELETE',
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`

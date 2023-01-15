@@ -6,7 +6,7 @@ import Loading from '../SharedPages/Loading';
 
 const UpdateProduct = () => {
     const { productId } = useParams();
-    const { data: product, isLoading } = useQuery(['tools', productId], () => fetch(`https://young-crag-95618.herokuapp.com/tools/${productId}`, {
+    const { data: product, isLoading } = useQuery(['tools', productId], () => fetch(`https://manufacturer-website-server-vercel01.vercel.app/tools/${productId}`, {
         method: 'GET'
     }).then(res => res.json()));
     if (isLoading) {
@@ -27,7 +27,7 @@ const UpdateProduct = () => {
         const ratings = event.target.ratings.value;
         const addProduct = { name, price: unit, img: url, company, about, available, minimum, ratings }
         console.log(addProduct)
-        fetch(`https://young-crag-95618.herokuapp.com/tools/${productId}`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/tools/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

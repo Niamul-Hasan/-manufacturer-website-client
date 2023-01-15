@@ -4,7 +4,7 @@ import ProductRow from './ProductRow';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://young-crag-95618.herokuapp.com/tools')
+        fetch('https://manufacturer-website-server-vercel01.vercel.app/tools')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

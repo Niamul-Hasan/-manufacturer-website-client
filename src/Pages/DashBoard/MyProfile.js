@@ -24,7 +24,7 @@ const MyProfile = () => {
 
         }
         console.log(profile);
-        fetch(`https://young-crag-95618.herokuapp.com/profile`, {
+        fetch(`https://manufacturer-website-server-vercel01.vercel.app/profile`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -8,7 +8,7 @@ import UserRow from './UserRow';
 const Users = () => {
 
     const [confirmDelete, setConfirmDelete] = useState(null);
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://young-crag-95618.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manufacturer-website-server-vercel01.vercel.app/user', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`
