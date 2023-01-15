@@ -5,7 +5,6 @@ const Components = () => {
     const [components, setComponents] = useState([]);
 
     useEffect(() => {
-        // https://manufacturer-website-server-vercel01.vercel.app/tools
 
         fetch('https://manufacturer-website-server-vercel01.vercel.app/tools')
             .then(res => res.json()).then(data => {
